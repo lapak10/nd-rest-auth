@@ -1,66 +1,74 @@
 # ND Rest Auth (WordPress Plugin)
 
-Enables token based authentication for your new WordPress Rest APIs
+Enables token based authentication for your WordPress Rest APIs ( Including Custom EndPoints )
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+This plugin gives your api a strong protection by adding a token based authentication system to wordpress.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+As this is a WordPress based plugin, so you would need (you probably must be having already) a WordPress installation.
 
-```
-Give examples
-```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+Installing this plugin is simply straight forward
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Login into your wp-admin with admin's account
 
 ```
-until finished
+Navigate to Plugins > Add New
+```
+
+```
+Upload Plugin > Select this plugin's ZIP
+```
+```
+Click Activate
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Endpoints for Tokens
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+To get a valid token, hit URL with POST
 
 ```
-Give an example
+curl --header "Content-Type: application/json"   --data '
+
+{"username":"imrokin","password":"imrokin"}'   
+
+http://localhost/wp-json/rest_auth/login
+
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
+which on success will return a JSON object like this
 ```
-Give an example
+{"success":true,"user_login":"imrokin","user_id":2,"msg":"login ok","token":"Re7a7ZxWzg71U0INZ6RU5ErDcryGnXjVr9mTZlRWTyj"}
 ```
 
-## Deployment
+and simply to logout, 
 
-Add additional notes about how to deploy this on a live system
+```
+curl --header "Content-Type: application/json"   --data '
+
+{"user_id":"2","token":"Re7a7ZxWzg71U0INZ6RU5ErDcryGnXjVr9mTZlRWTyj"}'   
+
+http://localhost/wp-json/rest_auth/logout
+
+```
+
+## Coding style
+
+This plugin follows [WordPress PHP Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/)
+
 
 
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to me.
 
 ## Versioning
 
