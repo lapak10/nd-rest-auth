@@ -4,7 +4,7 @@ Plugin Name: Custom Table Create
 Plugin URI: https://wordpress.org/plugins/health-check/
 Description: Creates a custom table in db when activated and deletes when deactivated
 Version: 0.1.0
-Author: Anand Kumar Chaudhary
+Author: Anand
 Author URI: https://fb.com/anand.kmk
 Text Domain: health-check
 Domain Path: /languages

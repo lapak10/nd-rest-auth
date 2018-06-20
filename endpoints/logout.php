@@ -10,14 +10,17 @@ add_action('rest_api_init', function() {
             'callback' => function( $request ){
     
           
-    ND_rest_auth :: delete_valid_token( (int) $request['user_id'] , (string) $request['token'] );
+    ND_rest_auth:: delete_valid_token( (int) $request['user_id'] , (string) $request['token'] );
 
     return new WP_REST_Response( array(
         'success'=>true,
-        'msg'=>'token deleted successfully',
-        'user_id'=>$request['user_id']
+        'msg'=>'token deleted successfully'
+        
     ) );
     
+   
+    
+   
     
     }
             
