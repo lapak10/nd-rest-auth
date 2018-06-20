@@ -1,8 +1,8 @@
 <?php defined('ABSPATH') or exit;
 /*
-Plugin Name: Custom Table Create
+Plugin Name: ND Rest Auth
 Plugin URI: https://wordpress.org/plugins/health-check/
-Description: Creates a custom table in db when activated and deletes when deactivated
+Description: Creats endpoints for token based REST Authentication
 Version: 0.1.0
 Author: Anand
 Author URI: https://fb.com/anand.kmk
