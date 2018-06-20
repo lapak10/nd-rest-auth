@@ -35,10 +35,9 @@ class ND_rest_auth{
 
         self :: $table_name = $table_prefix . self :: $table_name;
 
-        $sql = "DROP TABLE IF EXISTS ". self :: $table_name .";";
-        require_once( ABSPATH . '/wp-admin/includes/upgrade.php' );
-        dbDelta($sql);
-        //$wpdb->query($sql);
+        $sql = "DROP TABLE IF EXISTS " . self :: $table_name;
+        
+        $wpdb->query($sql);
 
 
     }
